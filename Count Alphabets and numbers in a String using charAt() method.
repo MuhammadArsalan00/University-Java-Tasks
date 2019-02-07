@@ -1,0 +1,38 @@
+package assignmentq1;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Muhammad Arsalan
+ */
+public class AssignmentQ1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        String str="";
+        int s,countCh=0,countNum=0;
+        
+        Scanner input=new Scanner (System.in);
+        System.out.println("Enter String: ");
+        str = input.next();
+        s=str.length();
+         for (int i=0;i<s;i++){
+             if (str.charAt(i)>=65&&str.charAt(i)<=90||str.charAt(i)>=97&&str.charAt(i)<=122){
+                 countCh++;   
+             }
+             else if(str.charAt(i)>=48&&str.charAt(i)<=57){
+                 countNum++;
+             }
+         }
+         System.out.println("Alphabets Count  : "+countCh);
+         System.out.println("Numbers Count  : "+countNum);
+         
+        
+      
+      
+    }
+    
+}
