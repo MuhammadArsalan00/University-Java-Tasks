@@ -1,0 +1,26 @@
+package print;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Muhammad Arsalan
+ */
+public class Print {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        System.out.print("Enter any integer: ");
+        int n=input.nextInt();
+        printInteger(n);
+        
+
+    }
+    static void printInteger(int n){
+        System.out.println(n);
+    }
+
+}
