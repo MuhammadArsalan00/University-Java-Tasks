@@ -1,0 +1,23 @@
+package assignmentq8;
+/**
+ *
+ * @author Muhammad Arsalan
+ */
+public class AssignmentQ8 {
+
+    public static void main(String[] args) {
+        int i=9;
+       char ch1 =  (char) (Math.random()*(90-65)+65);
+       char ch2 =  (char) (Math.random()*(90-65)+65);
+       char ch3 =  (char) (Math.random()*(90-65)+65);
+       int  n1= (int)  (Math.random()*9);
+       int  n2= (int)  (Math.random()*9);
+       int  n3= (int)  (Math.random()*9);
+       int  n4= (int)  (Math.random()*9);
+       System.out.println("Registeration No: " + ch1 + ch2 + ch3 +" "+ n1 + n2 + n3 + n4);
+        
+        
+        
+    }
+    
+}
