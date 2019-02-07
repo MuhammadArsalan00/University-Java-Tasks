@@ -1,0 +1,36 @@
+/*
+*****
+****
+***
+**
+*
+*/
+package triangle1;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Muhammad Arsalan
+ */
+public class Triangle1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a Number:  ");
+        int n = input.nextInt();
+        for (int row = 1; row<=n; row+=1){
+        int starl;
+              for (starl = 1; starl <= (n-row)+1; starl+=1){
+                  System.out.print( "*");
+                  
+              }
+              System.out.println();
+        }
+        
+    }
+    
+}
