@@ -1,0 +1,57 @@
+package searcharray;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Muhammad Arsalan
+ */
+public class SearchArray {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+       int [][] array = new int [5][5];
+       int k=10;
+         for(int i=0;i<5;i++){
+            for(int j=0;j<5;j++){
+             array[i][j] = k;
+             System.out.print(array[i][j]+ " ");
+             k=k+1;
+            }
+            k=k+5;
+            System.out.println("");
+         }
+         searchNewArray(array);
+     }
+    public static void searchNewArray(int [][] array){
+       System.out.println("Please enter Row number b/w 0 to 4 of searched array");
+       Scanner input = new Scanner (System.in);
+       int row = input.nextInt();
+       System.out.println("Please enter Colume number b/w 0 to 4 of searched array");
+       int colume = input.nextInt();
+       System.out.println("Please enter Size of searched array if size is exceded the array then it exit.");
+       int row1 = input.nextInt();
+       int colume1 = input.nextInt();
+       if (((row+row1)<=array.length)&&((colume+colume1)<=array.length)){
+            int [][] newArray = new int [10][10];
+            int n1=0;
+            for(int i=row;i<row+row1;i++){
+                int n2=0;
+                 for(int j=colume;j<colume+colume1;j++){
+                  newArray[n1][n2]=array[i][j];
+                  System.out.print(newArray[n1][n2] + " ");
+                  n2++;
+                 }
+                 n1++;
+                 System.out.println("");
+             }
+         }
+       else{
+           System.out.println("Your size exceded the limmit of Given array Better Luck Next Time");
+       }
+    }
+    
+}
