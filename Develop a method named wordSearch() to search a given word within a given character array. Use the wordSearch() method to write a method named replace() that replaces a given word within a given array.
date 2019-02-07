@@ -1,0 +1,98 @@
+package assignmentq5;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Muhammad Arsalan
+ */
+public class AssignmentQ5 {
+
+    /**
+     * @param args the command line arguments
+     * program to search a word from  string.
+     */
+      public static void main(String[] args) {
+       	        Scanner input = new Scanner (System.in);
+	        System.out.print("Enter any sentence : ");
+	        String sentence = input.nextLine();
+	        char[] sentence_array = new char[sentence.length()];
+	
+	        //converting input into an array
+	        for (int i = 0; i < sentence.length() ; i++) {
+	            sentence_array[i] = sentence.charAt(i);
+	        }
+	
+	        // input a number to find
+	        System.out.print("Enter a word to Find: ");
+	        String find = input.next();
+	        char[] find_array = new char[find.length()];
+	        for (int i = 0; i < find.length() ; i++) {
+	            find_array[i] = find.charAt(i);
+	        }
+	
+	        wordSearch(sentence_array, find_array,sentence,find);
+	
+	    }
+	
+	    public static void wordSearch(char[] sentence_array, char[] find_array, String sentence, String find) {
+	        int index = -1;
+	        for(int i = 0; i < sentence.length();i++){
+	            if (find_array[0]==sentence_array[i]){
+	                int k = i;
+	                int count = 0;
+	                for (int j = 0; j < find.length();j++){
+	                    if (find_array[j]==sentence_array[k]){
+                        count +=1;
+	                        k++;
+	                    }
+	                }
+	                if (count == find.length()){
+	                    index = i;
+	                }
+	            }
+	
+	        }
+	        if (index>-1){
+	            wordReplace(find, sentence_array, index);
+	
+	        }
+	        else{
+	            System.out.println("Word not found :");
+	
+	        }
+	
+	    }
+	
+	    public static void wordReplace(String find, char[] sentence_array, int index) {
+	        Scanner input = new Scanner(System.in);
+	        System.out.print("Enter a word to replace : ");
+	        String replace = input.next();
+	        if(replace.length()==find.length()){
+	            char[] replace_array = new char[replace.length()];
+	            for (int k = 0; k < replace.length();k++){
+	                replace_array[k]=replace.charAt(k);
+	
+	            }
+	            for (int j = 0; j < replace.length();j++){
+	                sentence_array[index]= replace_array[j];
+	                index++;
+	            }
+	
+	            for(char i: sentence_array){
+	                if ((char)i == (' ')){
+	                    System.out.print(" ");
+	                    continue;
+	                }
+	                System.out.print(i);
+	
+	            }
+	        }
+                else{
+	            System.out.println("Replaced word's Length should be equal to Find word");
+	
+	        }
+            }
+	}
+
+    
