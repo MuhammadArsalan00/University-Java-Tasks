@@ -1,0 +1,39 @@
+package assignmentq7;
+/**
+ *
+ * @author Muhammad Arsalan
+ */
+public class AssignmentQ7 {
+
+    public static void main(String[] args) {
+       double [] num = {10.31,8.12,7.43,1.08};
+       int number =0;
+       double frac = 0;
+       
+      numFrac(num,number,frac);
+       
+    }
+    static void numFrac(double[] num, int number, double frac){
+        int x;
+       int len  = (int)num.length;
+       double [] newDecimal = new double [len];
+       int [] newInteger = new int [len];
+       for (x=0;x<len;x++){
+        number = (int)num[x];
+        frac = num[x] - number;
+        newDecimal[x] = frac;
+        newInteger[x] =  number;
+        
+        }
+       
+       System.out.print("Decimal Array :  ");
+        for (int i=0;i<len;i++){
+            System.out.print(newDecimal[i] + ","); 
+        }
+                System.out.println("");
+        System.out.print("Integer Array :  ");
+              for (int i=0;i<len;i++){
+            System.out.print(newInteger[i] + ","); 
+        }
+    }   
+}
