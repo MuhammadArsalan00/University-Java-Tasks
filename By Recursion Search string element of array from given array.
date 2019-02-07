@@ -1,0 +1,29 @@
+package recursivesearcharray;
+
+
+/**
+ *
+ * @author Muhammad Arsalan
+ */
+public class RecursiveSearchArray {
+
+     public static void main(String[] args)  
+     { 
+        String array[] = {"arsalan", "kashif", "usman", "hamza", "sohaib"}; 
+        String str = "arsalan";
+        int num = 0;
+        System.out.println(searchArray(array,str,num));
+     }
+        public static String searchArray (String array[], String str, int num)
+     { 
+	if (array[num] == str){   
+	     return "Present!";
+        }
+	if (num+1<array.length){
+	     return searchArray(array,str,num+1);
+        }
+	return "Not Found";
+        
+     } 
+    
+}
