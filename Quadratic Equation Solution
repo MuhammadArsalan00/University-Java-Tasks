@@ -1,0 +1,44 @@
+package quadratic;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Muhammad Arsalan
+ */
+public class Quadratic {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a Number a");
+        int a = sc.nextInt();
+        System.out.println("Enter a Number b");
+        int b = sc.nextInt();
+        System.out.println("Enter a Number c");
+        int c = sc.nextInt();
+        if(a!=0){
+            int l = -b /(2*a);
+            int i = (b^2)-(4*a*c);
+            
+            if (i<0){
+                i=-i;
+                double m = Math.pow (i,(0.5));
+                m=m/2*a;
+                System.out.println("The equation has imaginary roots = { " +  l+"+"+"i"+m + " , ");
+                System.out.print(l+"-"+"i"+m + "  }"); 
+            }
+            else{
+                double m = Math.pow (i,(0.5));
+                m=m/2*a;
+                System.out.print("The equation has real roots = { " + l+m  + " . ");
+                System.out.print(l-m + " }");   
+            }   
+        }
+        else{
+            System.out.println("Error \n Solution doesn't exist");
+        }
+    } 
+}
