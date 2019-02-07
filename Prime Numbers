@@ -1,0 +1,32 @@
+package primenum;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Muhammad Arsalan
+ */
+public class PrimeNum {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int num,count=0;
+         Scanner input = new Scanner (System.in);
+         num = input.nextInt();
+         for (int i=1;i<=num;i++){
+            if( num%i==0){
+                count = count+1;
+            }
+         }
+         if (count==2){
+             System.out.println("Its a Prime Number");
+         }
+         else {
+             System.out.println("Its not a Prime Number");
+         }
+         
+    }
+    
+}
