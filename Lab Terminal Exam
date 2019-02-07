@@ -1,0 +1,126 @@
+package terminalexam;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author ciit
+ */
+public class TerminalExam {
+   
+
+    public static void main(String[] args) {
+             int [][] matrix = {{00,01,02,03,04,05,06,07},
+                               {10,11,12,13,14,15,16,17},
+                               {20,21,22,23,24,25,26,27},
+                               {30,31,32,33,34,35,36,37},
+                               {40,41,42,43,44,45,46,47},
+                               {50,51,52,53,54,55,56,57},
+                               {60,61,62,63,64,65,66,67},
+                               {70,71,72,73,74,75,76,77},
+                               };       
+
+        for (int i=0;i<=100;i++){
+       Scanner input =new Scanner (System.in);
+       System.out.print("Enter your option b/w 1 to 5.(1) to display,(2) Extrect a row ,(3) extract");
+       int optionNum = input.nextInt();
+       switch(optionNum){
+           case 1:{
+               
+               showMatrix(matrix);
+               break;
+           }
+           case 2:{
+               System.out.print("Enter row number to Extrect a row ");
+               int num = input.nextInt();
+               int [] exNum = extractRow(matrix,num);
+               for (int k=0;k<exNum.length;k++){
+                System.out.print(exNum[k]+"  "); 
+                
+            }
+              break; 
+           }
+           case 3:{
+               System.out.print("Enter number in row to Extrect a row ");
+               int num1 = input.nextInt();
+               int [] exRowNum = extractColumnNumberHaving(matrix,num1);
+               for (int j=0;j<exRowNum.length;j++){
+                System.out.print(exRowNum[j]+"  ");   
+           }
+               break;
+           }
+           case 4:{
+               System.out.print("Enter number in row to Extrect a row ");
+               int num2 = input.nextInt();
+               reverseMatrixRow(matrix,num2);
+           break;
+           }
+           case 5:{
+               System.out.print("Program Exsit");
+               i=i+150;              
+               break;
+           }
+           default:{
+           System.out.print("Enter Correct Number");
+           }
+           
+       }
+     }
+        }
+    
+       
+     public static void showMatrix(int [][] matrix){
+        for(int rowNum=0;rowNum<=7;rowNum++){
+            for (int colNum=0;colNum<=7;colNum++){
+                System.out.print(matrix[rowNum][colNum]+"  ");  
+            }
+             System.out.println("");
+        }
+    }   
+       public static int[] extractRow(int [][] matrix,int num){
+           int [] exRow = new int[8];
+        for(int rowNum=0;rowNum<=7;rowNum++){
+            if(rowNum==num){
+            for (int colNum=0;colNum<=7;colNum++){
+               exRow [colNum] = matrix[rowNum][colNum];
+            }
+            }
+        }
+        return exRow;
+    }
+           public static int[] extractColumnNumberHaving(int [][] matrix,int num1){
+            int [] exRowNum = new int[8];
+        for(int rowNum=0;rowNum<=7;rowNum++){
+            for (int colNum=0;colNum<=7;colNum++){
+                if(matrix[rowNum][colNum]==num1){
+                    for (int i=0;i<=7;i++){
+                  exRowNum [i] = matrix[rowNum][i];
+                    }
+                    continue;
+                }
+                
+            }
+        }
+        return exRowNum;
+    }
+             public static void reverseMatrixRow(int [][] matrix,int row){
+            int [] exRowNum = new int[8];
+            int temp=0;
+        for(int rowNum=0;rowNum<=7;rowNum++){
+            for (int colNum=0;colNum<=7;colNum++){
+                if(rowNum==row){
+                    for (int i=0;i<=3;i++){
+                        temp=matrix[rowNum][i];
+                        matrix[rowNum][i] = matrix[rowNum][7-i];
+                        matrix[rowNum][7-i]=temp;
+                    }
+                    break;
+                }
+       
+               
+            }
+        }
+    }     
+           
+    }
+    
