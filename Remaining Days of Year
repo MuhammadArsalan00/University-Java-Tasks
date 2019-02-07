@@ -1,0 +1,33 @@
+package remainingdays;
+
+/**
+ *
+ * @author Muhammad Arsalan
+ */
+public class RemainingDays {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int d= remainingDays(15,3);
+        System.out.println(d);
+    }
+    private static int remainingDays(int day, int month){
+        int daysPassed=0;
+         switch(month){
+             case 12: daysPassed+=30;  
+             case 11: daysPassed+=31;   
+             case 10: daysPassed+=30;   
+             case 9:  daysPassed+=31;   
+             case 8:  daysPassed+=31;  
+             case 7:  daysPassed+=30;
+             case 6:  daysPassed+=31;
+             case 5:  daysPassed+=30;
+             case 4:  daysPassed+=31;
+             case 3:  daysPassed+=28;
+             case 2:  daysPassed+=31;
+             case 1:  daysPassed+=0;                   
+         }
+        return 365-(daysPassed+day);
+    }
+    
+}
