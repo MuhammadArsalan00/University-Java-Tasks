@@ -1,0 +1,34 @@
+package desiredcolume;
+
+/**
+ *
+ * @author Muhammad Arsalan
+ */
+public class DesiredColume {
+
+ 
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int[][] array={{1,2,3},
+                       {4,5,6},
+                       {7,8,9}};
+        int[] column = columndesired(array,0);
+         for(int i=0;i<column.length;i++){
+            System.out.print(column[i]); 
+        }
+    }
+  static int[] columndesired(int[][] array,int columnumber){
+        if (columnumber>=0 && columnumber<array.length){
+            int[] column=new int[array.length];
+            for(int i=0;i<column.length;i++){
+                column[i]=array[i][columnumber];
+            }
+            return column;
+        }
+        else{
+            System.out.println("Column index out of range"); 
+            return null;
+        }
+    }
+    
+}
