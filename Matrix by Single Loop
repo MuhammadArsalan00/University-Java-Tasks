@@ -1,0 +1,27 @@
+package matrixbysingleloop;
+
+/**
+ *
+ * @author Muhammad Arsalan
+ */
+public class MatrixbySingleLoop {
+
+        
+    public static void main(String[] args){
+        // TODO code application logic here 
+        int[][] array={{1,2,3},{4,5,6},{7,8,9}};
+        int[][] newArray=new int[array.length][array.length];
+        int j=0;
+        for(int i=0;j<newArray.length;i++){
+            System.out.print(array[j][i]+" ");
+            if(i==((newArray.length)-1)){
+                j=j+1;
+                i=-1;
+                System.out.println("");
+            }
+        }
+
+        
+    }
+
+}
