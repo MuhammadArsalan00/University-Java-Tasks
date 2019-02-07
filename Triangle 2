@@ -1,0 +1,42 @@
+/*
+******
+ *****
+  ****
+   ***
+    **
+     *
+*/
+package triangle2;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Muhammad Arsalan
+ */
+public class Triangle2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a Number:  ");
+        int n = input.nextInt();
+        char star = '*';
+        char space = ' ';
+        for (int row = 1; row <= n; row+=1){
+        int starl , spacel;
+              for (spacel = 1; spacel <= row - 1; spacel+=1){
+                  System.out.print(space);
+              }
+              for (starl = 1; starl <= (n-row)+1; starl+=1){
+                  System.out.print( star);
+                  
+              }
+              System.out.println();
+        }
+        
+    }
+    
+}
