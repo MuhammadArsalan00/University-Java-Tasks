@@ -1,0 +1,22 @@
+package secondsinyear;
+
+/**
+ *
+ * @author Muhammad Arsalan
+ */
+public class SecondsinYear {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int days,hours,minutes,seconds;
+        days=365;
+        hours=days*24;
+        minutes=hours*60;
+        seconds=minutes*60;
+        System.out.println("No. of seconds in a year = "+seconds);
+
+    }
+    
+}
