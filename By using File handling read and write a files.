@@ -1,0 +1,60 @@
+package filehandling1;
+
+import java.io.File;
+import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Muhammad Arsalan
+ */
+
+ 
+public class FileHandling1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws Exception {
+        Scanner input = new Scanner(System.in);
+        String [] subjects = new String[5];
+        String [] marks = new String [5];
+        String subject;
+        String mark;
+        int n=1;
+        while(n <= 5){
+            System.out.print("\nEnter Subject " + n + ":");
+            subject = input.next();
+            subjects[n-1] = subject;
+            System.out.print("\nEnter Marks " + n + ":");
+            mark = input.next();
+            marks[n-1] = mark;
+            n++;
+        }
+        String sFileName ="C:\\Users\\Muhammad Arsalan\\Documents\\NetBeansProjects\\fileHandling1\\result.txt";
+        File sFile = new File(sFileName);
+        if(sFile.exists()){
+            System.out.print("\nSource file  " + sFileName  + " exist:");
+            System.exit(-1);
+            
+        }
+        PrintWriter output = new PrintWriter(sFile);
+        for (int i=0;i<5; i++){
+            output.println(subjects[i]+"       " + marks[i]);
+        }
+        output.close();
+        
+        Scanner Input = new Scanner (sFile);
+        String[] result = new String[1];
+        int i=0;
+        while (input.hasNext()){
+            result[i] = Input.nextLine();
+            result = Arrays.copyOf(result, result.length+1);
+            i++;
+        }
+        for (String result1 : result) {
+            System.out.println(result1);
+        } 
+    }
+}
